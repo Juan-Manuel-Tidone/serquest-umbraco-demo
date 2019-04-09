@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IBlog>
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-5">
+
+            <div class="col-md-5 ml-auto mb-5 order-md-2" data-aos="fade">
+                <img src="@Model.BlogImage.Url" alt="Image" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6 order-md-1" data-aos="fade">
+                <div class="text-left pb-1 border-primary mb-4">
+                    <h2 class="text-primary">@Model.BlogTitle</h2>
+                </div>
+                <p>@Model.BlogDescription</p>
+            </div>
+
+        </div>
+    </div>
+</div>

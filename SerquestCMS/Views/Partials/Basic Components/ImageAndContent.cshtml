@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<IPublishedContent>>
+
+
+<div class="site-section block-13">
+    <!-- <div class="container"></div> -->
+
+    <div class="owl-carousel nonloop-block-13">
+        @foreach (var item in Model)
+        {
+            var tcEvent = (ImageAndContent)item;
+            <div>
+                <a href="#" class="unit-1 text-center">
+                    <img src="@tcEvent.IcImage.Url" alt="Image" class="img-fluid">
+                    <div class="unit-1-text">
+                        <h3 class="unit-1-heading">@tcEvent.IcHeading</h3>
+                        <p class="px-5">@tcEvent.IcContent</p>
+                    </div>
+                </a>
+            </div>
+        }
+        
+        
+
+    </div>
+</div>

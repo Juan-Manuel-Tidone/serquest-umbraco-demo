@@ -1,0 +1,33 @@
+﻿@using SerquestCMS.Helpers
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Home>
+@{
+                /**/
+
+                /**/
+
+                Layout = "webBaseTemplate.cshtml";
+}
+
+@{ Html.RenderAction("Banner", "BasicComponents");}
+@{ Html.RenderAction("TitleAndContent", "BasicComponents");}
+@{ Html.RenderAction("ExploreRendering", "BasicComponents");}
+@{ Html.RenderAction("ImageAndContent", "BasicComponents");}
+
+
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center border-primary">
+                <h2 class="font-weight-light text-primary">Volunteer Opportunities</h2>
+                <p class="color-black-opacity-5">Be inspired by the following Volunteer Opportunities</p>
+            </div>
+        </div>
+        <div class="row align-items-stretch">
+            @Html.RenderNestedContentPartials(Model.Services, new ViewDataDictionary())
+        </div>
+    </div>
+</div>
+
+@{ Html.RenderAction("Video", "BasicComponents");}
+@{ Html.RenderAction("Quotes", "BasicComponents");}
+@{ Html.RenderAction("BlogsOverview", "Blogs");}
