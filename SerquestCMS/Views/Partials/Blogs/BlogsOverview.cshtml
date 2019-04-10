@@ -1,28 +1,31 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<IPublishedContent>>
 
-<div class="site-section">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
-            <div class="col-md-7 text-center border-primary">
-                <h2 class="font-weight-light text-primary">Our Blog</h2>
-                <p class="color-black-opacity-5">See Our Daily News &amp; Updates</p>
+@if(Model.Any())
+{ 
+    <div class="site-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-7 text-center border-primary">
+                    <h2 class="font-weight-light text-primary">Our Blog</h2>
+                    <p class="color-black-opacity-5">See Our Daily News &amp; Updates</p>
+                </div>
+            </div>
+
+            <div class="row mb-3 align-items-stretch">
+                @foreach (var item in Model)
+                {
+                    var blog = (IBlog) item;
+
+                    <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
+                        <div class="h-entry">
+                            <img src="@blog.BlogImage.Url" alt="Image" class="img-fluid">
+                            <h2 class="font-size-regular"><a href="@blog.Url">@blog.BlogTitle</a></h2>
+                            <div class="meta mb-4">by Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019 at 2:00 pm <span class="mx-2">&bullet;</span> <a href="#">News</a></div>
+                            <p>@blog.BlogShortDescription</p>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
-
-        <div class="row mb-3 align-items-stretch">
-            @foreach (var item in Model)
-            {
-                var blog = (IBlog) item;
-
-                <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-                    <div class="h-entry">
-                        <img src="@blog.BlogImage.Url" alt="Image" class="img-fluid">
-                        <h2 class="font-size-regular"><a href="@blog.Url">@blog.BlogTitle</a></h2>
-                        <div class="meta mb-4">by Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019 at 2:00 pm <span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-                        <p>@blog.BlogShortDescription</p>
-                    </div>
-                </div>
-            }
-        </div>
     </div>
-</div>
+}
