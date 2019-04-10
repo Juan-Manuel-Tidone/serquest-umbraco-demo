@@ -450,6 +450,7 @@
     <Content Include="images\hero_bg_2.jpg" />
     <Content Include="images\hero_bg_3.jpg" />
     <Content Include="images\hero_bg_4.jpg" />
+    <Content Include="images\icon.ico" />
     <Content Include="images\img_1.jpg" />
     <Content Include="images\img_2.jpg" />
     <Content Include="images\img_3.jpg" />
